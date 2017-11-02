@@ -41,7 +41,8 @@ values."
      (auto-completion :variables auto-completion-enable-sort-by-usage t
                       auto-completion-enable-snippets-in-popup t
                       :disabled-for org markdown)
-     better-defaults
+     (better-defaults :variables
+                      better-defaults-move-to-end-of-code-first t)
      emacs-lisp
      git
      markdown
@@ -63,7 +64,7 @@ values."
    dotspacemacs-excluded-packages '(
                     magit-gh-pulls magit-gitflow org-projectile evil-mc realgud
                     evil-args evil-ediff evil-exchange evil-unimpaired
-                    evil-indent-plus volatile-highlights smartparens
+                    evil-indent-plus volatile-highlights
                     spaceline holy-mode skewer-mode rainbow-delimiters
                     highlight-indentation vi-tilde-fringe eyebrowse
                     org-bullets smooth-scrolling org-repo-todo org-download org-timer
@@ -322,8 +323,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
   )
 
 (defun dotspacemacs/user-config ()
-  (setcdr evil-insert-state-map nil)
-  (define-key evil-insert-state-map [escape] 'evil-normal-state)
+  (define-key evil-insert-state-map (kbd "C-e") 'mwim-end-of-code-or-line)
+  (define-key evil-motion-state-map (kbd "C-e") 'mwim-end-of-code-or-line)
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration.
@@ -357,3 +358,4 @@ This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
 This function is called at the very end of Spacemacs initialization."
 )
+(setq scheme-program-name "chicken")
