@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst ziyangzou-packages
-  '()
+  '(
+    )
+
   "The list of Lisp packages required by the ziyangzou layer.
 
 Each entry is either:
@@ -57,6 +59,5 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
-
 
 ;;; packages.el ends here
