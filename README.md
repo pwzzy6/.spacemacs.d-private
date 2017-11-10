@@ -1,2 +1,2 @@
 # .spacemacs.d-private
-My personal settings for spacemacs.Still learing it.
+My personal settings for spacemacs.
