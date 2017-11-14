@@ -51,6 +51,7 @@ values."
      syntax-checking
      common-lisp
      scheme
+     ycmd
      ziyangzou
      )
    ;; List of additional packages that will be installed without being
